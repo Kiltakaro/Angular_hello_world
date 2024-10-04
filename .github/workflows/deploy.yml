@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -22,27 +27,22 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --base-href=/angular_hello_world/
+        run: npm run build -- --base-href=/
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './dist/angular_hello_world'
+          path: './dist/angular_hello_world/'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write

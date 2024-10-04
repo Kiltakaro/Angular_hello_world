@@ -9,5 +9,5 @@ import { HelloComponent } from './hello/hello.component';
   styles: ['h1 { color: blue; text-align: center; }']
 })
 export class AppComponent {
-  message = 'Hello World';
+  message = 'Le “Hello World” est une expression traditionnelle utilisée dans la programmation informatique pour tester la fonctionnalité d’un langage de programmation ou d’un compilateur.';
 }

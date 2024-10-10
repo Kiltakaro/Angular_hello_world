@@ -32,7 +32,11 @@
             "scripts": []
           },
           "configurations": {
+            "local": {
+              "baseHref": "/"
+            },
             "production": {
+              "baseHref": "/Angular_hello_world/",
               "budgets": [
                 {
                   "type": "initial",

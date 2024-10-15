@@ -30,12 +30,12 @@ jobs:
         run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v3
         with:
           enablement: true
 
       - name: Upload artifac
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           path: './dist/angular-hello-world/browser/'
           
